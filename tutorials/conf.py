@@ -163,5 +163,7 @@ if os.environ.get('NBFILE'):  # this allows only building a single tutorial file
 
 process_notebooks(nb_tutorials_path, **processkwargs)
 
-
+html_static_path = ['notebooks', '_static']
+html_static_path = [os.path.join(_root, 'tutorials', x)
+                    for x in html_static_path] # make absolute paths
 suppress_warnings = ['image.nonlocal_uri']
